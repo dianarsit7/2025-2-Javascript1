@@ -14,6 +14,9 @@ async function main() {
     console.log("No es un número válido");
   }
 
+
+
+  
   switch (dia) {
     case 1:
       console.log(diasSemana[0]);
