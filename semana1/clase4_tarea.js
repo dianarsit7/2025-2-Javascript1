@@ -22,15 +22,24 @@ async function main() {
 
     const birthDate = new Date(`${birthDateYear}-${birthDateMonth}-${birthDateDay}`);
 
-    console.log("Haz vivido aproximadamente:");
-    console.log(`${diffDays(actualDate, birthDate)} dias`);
+    let years = actualDate.getFullYear() - birthDate.getFullYear();
+    let months = actualDate.getMonth() - birthDate.getMonth();
+    let days = actualDate.getDate() - birthDate.getDate();
+  
+    if (days < 0) {
+      months--;
+      days += new Date(actualDate.getFullYear(), actualDate.getMonth(), 0).getDate();
+    }
+  
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+  
+    console.log(`Has vivido aproximadamente: ${years} años, ${months} meses y ${days} días.`);
+    console.log(`Tu cumpleaños es: ${birthDateDay}/${birthDateMonth}/${birthDateYear}`);
 
-    //TODO: Cuantos meses y cuantos años ha vivido la persona.
-    //TODO: Especificar la fecha con años, meses, dias. 
+  }
 
-
-
-
-}
 
 main();

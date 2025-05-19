@@ -3,10 +3,12 @@
 const { ask } = require('../helpers/input');
 
 async function main() {
-  const name = await ask("¿Cómo te llamas? ");
-  const age = Number(await ask("¿Cuántos años tienes? "));
-  const comida = await ask("¿Cuál es tu comida favorita? ");
-  console.log("Hola " + name + ", tienes " + age + " años, y tu comida favirita es: " + comida);
+  const edad = Number(await ask("Indica cual es tu edad"));
+    if (edad >= 18) {
+      console.log("Eres mayor de edad");
+    } else {
+      console.log("Eres menor de edad");
+    }
 }
 
 main();

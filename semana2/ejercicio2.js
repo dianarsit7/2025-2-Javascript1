@@ -5,7 +5,7 @@ async function main() {
   let frutas = [];
 
   while (opcion !== '3') {
-    opcion = await ask(`¿Qué deseas hacer?\\n1. Agregar una fruta\\n2. Eliminar una fruta\\n3. Salir`)
+    opcion = await ask(`¿Qué deseas hacer?\\n1. Agregar una fruta\\n2. Eliminar una fruta\\n3. Mostrar lista de frutas\\n4. Salir`)
 
     if (opcion === '1') {
       let frutaNueva = await ask('Ingresa el nombre de la fruta que quieres agregar: ');
@@ -28,9 +28,17 @@ async function main() {
 
         console.log(`Frutas actuales ${frutas}`);
       }
-    } else if (opcion === '3') {
+    } else if (opcion === '3') { 
+      if (frutas.length === 0) {
+        console.log('No tienes aún tu lista de frutas');
+      }else {
+        console.log('Esta es tu lista hasta el momento');
+        console.log(frutas.join(', '));
+      }
+      
+    } else if (opcion === '4') {
       console.log('Gracias por usar el programa. Tus frutas fueron: ', frutas);
-    } else {
+      }  else {
       console.log('Opción no permitida. Intenta de nuevo');
     }
   }
