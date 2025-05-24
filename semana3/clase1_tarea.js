@@ -1,17 +1,20 @@
-// 📝 Instrucciones:
-// Crea un arreglo llamado alumnos.
-//
-// Usa un bucle while para permitir al usuario agregar objetos alumno al arreglo.
-// Cada alumno debe tener:
-//
-// nombre
-// edad
-// calificacion
-//
-// Pregunta al usuario si desea seguir agregando más alumnos.
-// Después de salir del ciclo, muestra:
-// Cuántos alumnos tienen calificación aprobatoria (≥ 70).
-// Cuántos pueden votar (edad ≥ 18).
-// El promedio general de calificaciones.
-// La calificación mayor.
-// La calificación menor.
+
+const { ask } = require('../helpers/input');
+
+async function main(){
+
+let alumnos = [];    
+
+console.log("Bienvenido al registro de alumnos");
+console.log("Vas a ingresar nombre, edad y calificación de cada alumno.");
+
+let seguir = true;
+
+while (seguir) {
+    let nombre = await ask("Nombre del alumno:");
+    let edad = await ask(`¿Qué edad tiene ${nombre}?`);
+    let calificacion = await ask(`¿Qué calificación obtuvo ${nombre}?`);
+
+ }
+}
+main();
